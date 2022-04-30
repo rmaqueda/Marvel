@@ -311,7 +311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nset -e\n\nSECRET_FILE=$SRCROOT/$PRODUCT_NAME/Secrets/Secrets.plist\nSAMPLE_SECRET_FILE=$SRCROOT/$PRODUCT_NAME/Secrets/Secrets_example.plist\n\nif [ ! -f \"$SECRET_FILE\" ]; then\n  echo \"error: Setup API KEY in Secrets.plist file.\"\n  cp -v \"${SAMPLE_SECRET_FILE}\" \"${SECRET_FILE}\"\nfi\n \nPUBLIC=`/usr/libexec/PlistBuddy -c \"Print :MarvelPublicKey\" $SECRET_FILE`\nPRIVATE=`/usr/libexec/PlistBuddy -c \"Print :MarvelPrivateKey\" $SECRET_FILE`\n\nif echo $PUBLIC | grep \"Enter\"; then\n  echo \"error: Setup API KEY in Secrets.plist file.\"\n  exit 1\nfi\n\nif echo $PRIVATE | grep \"Enter\"; then\n  echo \"error: Setup API KEY in Secrets.plist file.\"\n  exit 1\nfi\n";
+			shellScript = "#!/bin/bash\nset -e\n\nSECRET_FILE=$SRCROOT/$PRODUCT_NAME/Secrets/Secrets.plist\nSAMPLE_SECRET_FILE=$SRCROOT/$PRODUCT_NAME/Secrets/Secrets_example.plist\n\nif [ ! -f \"$SECRET_FILE\" ]; then\n  echo \"error: Setup API KEYs in Secrets.plist file.\"\n  cp -v \"${SAMPLE_SECRET_FILE}\" \"${SECRET_FILE}\"\nfi\n \nPUBLIC=`/usr/libexec/PlistBuddy -c \"Print :MarvelPublicKey\" $SECRET_FILE`\nPRIVATE=`/usr/libexec/PlistBuddy -c \"Print :MarvelPrivateKey\" $SECRET_FILE`\n\nif echo $PUBLIC | grep \"Enter\"; then\n  echo \"error: Setup API KEYs in Secrets.plist file.\"\n  exit 1\nfi\n\nif echo $PRIVATE | grep \"Enter\"; then\n  echo \"error: Setup API KEYs in Secrets.plist file.\"\n  exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
