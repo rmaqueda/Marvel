@@ -58,9 +58,6 @@ public struct CharacterRequest {
         if let id = id {
             finalURL.appendPathComponent(String(id))
         }
-        if let limit = limit, limit > 100 {
-            throw Error.invalidLimit
-        }
         
         let group = DispatchGroup()
         group.enter()
