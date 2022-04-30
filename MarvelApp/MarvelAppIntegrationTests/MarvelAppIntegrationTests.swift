@@ -1,14 +1,13 @@
 //
-//  MarvelAPITests.swift
-//  MarvelAPITests
+//  MarvelAppIntegrationTests.swift
+//  MarvelAppIntegrationTests
 //
 //  Created by Maqueda, Ricardo Javier on 30/4/22.
 //
 
 import XCTest
-@testable import MarvelAPI
 
-class MarvelAPITests: XCTestCase {
+class MarvelAppIntegrationTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,7 +27,7 @@ class MarvelAPITests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113C0345281D26DC002352E4 /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0344281D26DC002352E4 /* CharactersRequest.swift */; };
+		113C0347281D26F1002352E4 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0346281D26F1002352E4 /* String+MD5.swift */; };
+		113C034F281D273B002352E4 /* CharactersRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C034E281D273B002352E4 /* CharactersRequestTests.swift */; };
+		113C0352281D2747002352E4 /* String+MD5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0351281D2747002352E4 /* String+MD5Tests.swift */; };
+		113C0355281D279E002352E4 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0354281D279E002352E4 /* URLProtocolStub.swift */; };
 		11E05169281D18F100451790 /* MarvelAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E05160281D18F100451790 /* MarvelAPI.framework */; };
-		11E0516E281D18F100451790 /* MarvelAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E0516D281D18F100451790 /* MarvelAPITests.swift */; };
-		11E0516F281D18F100451790 /* MarvelAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 11E05163281D18F100451790 /* MarvelAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		11E051BA281D194A00451790 /* Hello.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E051B9281D194A00451790 /* Hello.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +26,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113C0344281D26DC002352E4 /* CharactersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
+		113C0346281D26F1002352E4 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
+		113C034E281D273B002352E4 /* CharactersRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersRequestTests.swift; sourceTree = "<group>"; };
+		113C0351281D2747002352E4 /* String+MD5Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5Tests.swift"; sourceTree = "<group>"; };
+		113C0354281D279E002352E4 /* URLProtocolStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		11E05160281D18F100451790 /* MarvelAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarvelAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		11E05163281D18F100451790 /* MarvelAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarvelAPI.h; sourceTree = "<group>"; };
 		11E05168281D18F100451790 /* MarvelAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		11E0516D281D18F100451790 /* MarvelAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPITests.swift; sourceTree = "<group>"; };
-		11E051B9281D194A00451790 /* Hello.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hello.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113C0348281D26F4002352E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				113C0346281D26F1002352E4 /* String+MD5.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		113C0350281D273E002352E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				113C0354281D279E002352E4 /* URLProtocolStub.swift */,
+				113C0351281D2747002352E4 /* String+MD5Tests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		11E05156281D18F000451790 = {
 			isa = PBXGroup;
 			children = (
@@ -71,8 +92,8 @@
 		11E05162281D18F100451790 /* MarvelAPI */ = {
 			isa = PBXGroup;
 			children = (
-				11E05163281D18F100451790 /* MarvelAPI.h */,
-				11E051B9281D194A00451790 /* Hello.swift */,
+				113C0344281D26DC002352E4 /* CharactersRequest.swift */,
+				113C0348281D26F4002352E4 /* Utils */,
 			);
 			path = MarvelAPI;
 			sourceTree = "<group>";
@@ -80,7 +101,8 @@
 		11E0516C281D18F100451790 /* MarvelAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				11E0516D281D18F100451790 /* MarvelAPITests.swift */,
+				113C0350281D273E002352E4 /* Utils */,
+				113C034E281D273B002352E4 /* CharactersRequestTests.swift */,
 			);
 			path = MarvelAPITests;
 			sourceTree = "<group>";
@@ -92,7 +114,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11E0516F281D18F100451790 /* MarvelAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +172,7 @@
 					};
 					11E05167281D18F100451790 = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -195,7 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11E051BA281D194A00451790 /* Hello.swift in Sources */,
+				113C0345281D26DC002352E4 /* CharactersRequest.swift in Sources */,
+				113C0347281D26F1002352E4 /* String+MD5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11E0516E281D18F100451790 /* MarvelAPITests.swift in Sources */,
+				113C034F281D273B002352E4 /* CharactersRequestTests.swift in Sources */,
+				113C0355281D279E002352E4 /* URLProtocolStub.swift in Sources */,
+				113C0352281D2747002352E4 /* String+MD5Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,14 +431,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FZ32CY9FLM;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = es.molestudio.MarvelAPITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -422,10 +454,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FZ32CY9FLM;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = es.molestudio.MarvelAPITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
