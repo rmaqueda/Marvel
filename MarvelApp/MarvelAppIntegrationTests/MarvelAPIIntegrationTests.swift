@@ -13,7 +13,6 @@ class MarvelAPIIntegrationTests: XCTestCase {
 
     func test_integration_gellAll() {
         let data = try? CharacterRequest(
-            session: URLSession.shared,
             publicKey: Secrets.marvelPublicKey,
             privateKey: Secrets.marvelPrivateKey
         ).getAll(
@@ -26,7 +25,6 @@ class MarvelAPIIntegrationTests: XCTestCase {
     
     func test_integration_gell_1009175() {
         let data = try? CharacterRequest(
-            session: URLSession.shared,
             publicKey: Secrets.marvelPublicKey,
             privateKey: Secrets.marvelPrivateKey
         ).get(

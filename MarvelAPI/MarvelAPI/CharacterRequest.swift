@@ -14,7 +14,7 @@ public struct CharacterRequest {
     private let session: URLSession
     
     public init(
-        session: URLSession,
+        session: URLSession = URLSession.shared,
         publicKey: String,
         privateKey: String
     ) {
