@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113C0334281D1EE4002352E4 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 113C0333281D1EE4002352E4 /* Secrets.plist */; };
 		11E05185281D190400451790 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E05184281D190400451790 /* AppDelegate.swift */; };
 		11E05187281D190400451790 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E05186281D190400451790 /* SceneDelegate.swift */; };
 		11E05189281D190400451790 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E05188281D190400451790 /* ViewController.swift */; };
@@ -18,7 +19,6 @@
 		11E051A8281D190A00451790 /* MarvelAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E051A7281D190A00451790 /* MarvelAppUITestsLaunchTests.swift */; };
 		11E051B6281D193C00451790 /* MarvelAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E051B5281D193C00451790 /* MarvelAPI.framework */; };
 		11E051B7281D193C00451790 /* MarvelAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 11E051B5281D193C00451790 /* MarvelAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		11E051BE281D1B0800451790 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E051BD281D1B0800451790 /* Secrets.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		113C0333281D1EE4002352E4 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		11E05181281D190400451790 /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E05184281D190400451790 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11E05186281D190400451790 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		11E051A5281D190A00451790 /* MarvelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITests.swift; sourceTree = "<group>"; };
 		11E051A7281D190A00451790 /* MarvelAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		11E051B5281D193C00451790 /* MarvelAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MarvelAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		11E051BD281D1B0800451790 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +96,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		113C0332281D1EBA002352E4 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				113C0333281D1EE4002352E4 /* Secrets.plist */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
 		11E05178281D190400451790 = {
 			isa = PBXGroup;
 			children = (
-				11E051BC281D1AD600451790 /* Secrets */,
 				11E05183281D190400451790 /* MarvelApp */,
 				11E0519A281D190A00451790 /* MarvelAppTests */,
 				11E051A4281D190A00451790 /* MarvelAppUITests */,
@@ -128,6 +135,7 @@
 				11E0518D281D190900451790 /* Assets.xcassets */,
 				11E0518F281D190900451790 /* LaunchScreen.storyboard */,
 				11E05192281D190900451790 /* Info.plist */,
+				113C0332281D1EBA002352E4 /* Secrets */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -157,14 +165,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		11E051BC281D1AD600451790 /* Secrets */ = {
-			isa = PBXGroup;
-			children = (
-				11E051BD281D1B0800451790 /* Secrets.plist */,
-			);
-			path = Secrets;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,7 +172,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11E051AB281D190A00451790 /* Build configuration list for PBXNativeTarget "MarvelApp" */;
 			buildPhases = (
-				11E051BB281D19C300451790 /* ShellScript */,
+				11E051BB281D19C300451790 /* Secrets */,
 				11E0517D281D190400451790 /* Sources */,
 				11E0517E281D190400451790 /* Frameworks */,
 				11E0517F281D190400451790 /* Resources */,
@@ -271,7 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11E051BE281D1B0800451790 /* Secrets.plist in Resources */,
+				113C0334281D1EE4002352E4 /* Secrets.plist in Resources */,
 				11E05191281D190900451790 /* LaunchScreen.storyboard in Resources */,
 				11E0518E281D190900451790 /* Assets.xcassets in Resources */,
 				11E0518C281D190400451790 /* Main.storyboard in Resources */,
@@ -295,7 +295,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		11E051BB281D19C300451790 /* ShellScript */ = {
+		11E051BB281D19C300451790 /* Secrets */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,13 +304,14 @@
 			);
 			inputPaths = (
 			);
+			name = Secrets;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nset -e\n\nSECRET_FILE=$SRCROOT/$PRODUCT_NAME/Secrets/Secrets.plist\nSAMPLE_SECRET_FILE=$SRCROOT/$PRODUCT_NAME/Secrets/Secrets_example.plist\n\n\nif [ ! -f \"$SECRET_FILE\" ]; then\n  echo \"error: Setup API KEY in Secrets.plist file.\"\n  cp -v \"${SAMPLE_SECRET_FILE}\" \"${SECRET_FILE}\"\nfi\n \nPUBLIC=`/usr/libexec/PlistBuddy -c \"Print :MarvelPublicKey\" $SECRET_FILE`\nPRIVATE=`/usr/libexec/PlistBuddy -c \"Print :MarvelPrivateKey\" $SECRET_FILE`\n\nif echo $PUBLIC | grep \"Enter\"; then\n  echo \"error: Setup API KEY in Secrets.plist file.\"\n  exit 1\nfi\n\nif echo $PRIVATE | grep \"Enter\"; then\n  echo \"error: Setup API KEY in Secrets.plist file.\"\n  exit 1\nfi\n";
+			shellScript = "#!/bin/bash\nset -e\n\nSECRET_FILE=$SRCROOT/$PRODUCT_NAME/Secrets/Secrets.plist\nSAMPLE_SECRET_FILE=$SRCROOT/$PRODUCT_NAME/Secrets/Secrets_example.plist\n\nif [ ! -f \"$SECRET_FILE\" ]; then\n  echo \"error: Setup API KEY in Secrets.plist file.\"\n  cp -v \"${SAMPLE_SECRET_FILE}\" \"${SECRET_FILE}\"\nfi\n \nPUBLIC=`/usr/libexec/PlistBuddy -c \"Print :MarvelPublicKey\" $SECRET_FILE`\nPRIVATE=`/usr/libexec/PlistBuddy -c \"Print :MarvelPrivateKey\" $SECRET_FILE`\n\nif echo $PUBLIC | grep \"Enter\"; then\n  echo \"error: Setup API KEY in Secrets.plist file.\"\n  exit 1\nfi\n\nif echo $PRIVATE | grep \"Enter\"; then\n  echo \"error: Setup API KEY in Secrets.plist file.\"\n  exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

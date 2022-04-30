@@ -90,4 +90,4 @@ fastlane/test_output
 iOSInjectionProject/
 
 # Secrets
-MarvelApp/Secrets/Secrets.plist
+MarvelApp/MarvelApp/Secrets/Secrets.plist
