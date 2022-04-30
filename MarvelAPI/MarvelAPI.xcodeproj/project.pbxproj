@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		113C0345281D26DC002352E4 /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0344281D26DC002352E4 /* CharactersRequest.swift */; };
+		113C0345281D26DC002352E4 /* CharacterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0344281D26DC002352E4 /* CharacterRequest.swift */; };
 		113C0347281D26F1002352E4 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0346281D26F1002352E4 /* String+MD5.swift */; };
 		113C034F281D273B002352E4 /* CharactersRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C034E281D273B002352E4 /* CharactersRequestTests.swift */; };
 		113C0352281D2747002352E4 /* String+MD5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0351281D2747002352E4 /* String+MD5Tests.swift */; };
@@ -26,7 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		113C0344281D26DC002352E4 /* CharactersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
+		113C0344281D26DC002352E4 /* CharacterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterRequest.swift; sourceTree = "<group>"; };
 		113C0346281D26F1002352E4 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		113C034E281D273B002352E4 /* CharactersRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersRequestTests.swift; sourceTree = "<group>"; };
 		113C0351281D2747002352E4 /* String+MD5Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5Tests.swift"; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		11E05162281D18F100451790 /* MarvelAPI */ = {
 			isa = PBXGroup;
 			children = (
-				113C0344281D26DC002352E4 /* CharactersRequest.swift */,
+				113C0344281D26DC002352E4 /* CharacterRequest.swift */,
 				113C0348281D26F4002352E4 /* Utils */,
 			);
 			path = MarvelAPI;
@@ -217,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				113C0345281D26DC002352E4 /* CharactersRequest.swift in Sources */,
+				113C0345281D26DC002352E4 /* CharacterRequest.swift in Sources */,
 				113C0347281D26F1002352E4 /* String+MD5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

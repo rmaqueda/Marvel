@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CharactersRequest {
+public struct CharacterRequest {
     private let charactersURL = URL(string: "https://gateway.marvel.com/v1/public/characters")!
     private let publicKey: String
     private let privateKey: String
@@ -34,7 +34,31 @@ public struct CharactersRequest {
         limit: Int = 20,
         offset: Int? = nil
     ) throws -> Data {
-        guard limit <= 100 else {
+        try characterRequest(
+            timeProvider: timeProvider,
+            limit: limit,
+            offset: offset
+        )
+    }
+    
+    public func get(
+        timeProvider: (() -> Date) = { Date() },
+        id: Int
+    ) throws -> Data  {
+        try characterRequest(id: id, timeProvider: timeProvider)
+    }
+    
+    private func characterRequest(
+        id: Int? = nil,
+        timeProvider: (() -> Date) = { Date() },
+        limit: Int? = nil,
+        offset: Int? = nil
+    ) throws -> Data {
+        var finalURL = charactersURL
+        if let id = id {
+            finalURL.appendPathComponent(String(id))
+        }
+        if let limit = limit, limit > 100 {
             throw Error.invalidLimit
         }
         
@@ -48,10 +72,17 @@ public struct CharactersRequest {
         let apiKey = URLQueryItem(name: "apikey", value: publicKey)
         let ts = URLQueryItem(name: "ts", value: timestamp)
         let hash = URLQueryItem(name: "hash", value: (timestamp + privateKey + publicKey).MD5)
-        let limit = URLQueryItem(name: "limit", value: String(limit))
         
-        var components = URLComponents(url: charactersURL, resolvingAgainstBaseURL: false)!
-        components.queryItems = [ts, apiKey, hash, limit]
+        var components = URLComponents(url: finalURL, resolvingAgainstBaseURL: false)!
+        components.queryItems = [ts, apiKey, hash]
+        
+        if let limit = limit {
+            if limit > 100 {
+                throw Error.invalidLimit
+            }
+            let limitParam = URLQueryItem(name: "limit", value: String(limit))
+            components.queryItems?.append(limitParam)
+        }
         
         if let offset = offset {
             components.queryItems?.append(URLQueryItem(name: "offset", value: String(offset)))
@@ -78,5 +109,4 @@ public struct CharactersRequest {
         
         return resultData
     }
-    
 }

@@ -11,14 +11,26 @@ import MarvelAPI
 
 class MarvelAPIIntegrationTests: XCTestCase {
 
-    func test_integration() {
-        let data = try? CharactersRequest(
+    func test_integration_gellAll() {
+        let data = try? CharacterRequest(
             session: URLSession.shared,
             publicKey: Secrets.marvelPublicKey,
             privateKey: Secrets.marvelPrivateKey
         ).getAll(
             limit: 100,
             offset: 100
+        )
+        
+        XCTAssertNotNil(data)
+    }
+    
+    func test_integration_gell_1009175() {
+        let data = try? CharacterRequest(
+            session: URLSession.shared,
+            publicKey: Secrets.marvelPublicKey,
+            privateKey: Secrets.marvelPrivateKey
+        ).get(
+            id: 1009175
         )
         
         XCTAssertNotNil(data)
