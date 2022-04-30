@@ -173,8 +173,8 @@
 			buildConfigurationList = 11E051AB281D190A00451790 /* Build configuration list for PBXNativeTarget "MarvelApp" */;
 			buildPhases = (
 				11E051BB281D19C300451790 /* Secrets */,
-				11E0517D281D190400451790 /* Sources */,
 				11E0517E281D190400451790 /* Frameworks */,
+				11E0517D281D190400451790 /* Sources */,
 				11E0517F281D190400451790 /* Resources */,
 				11E051B8281D193C00451790 /* Embed Frameworks */,
 			);
