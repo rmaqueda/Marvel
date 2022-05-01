@@ -63,28 +63,20 @@ class MarvelAPIIntegrationTests: XCTestCase {
         do {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            let response = try decoder.decode(CharactersResponse.self, from: data)
-            XCTAssertNotNil(response)
-            return response
+            
+            return try decoder.decode(CharactersResponse.self, from: data)
         } catch DecodingError.dataCorrupted(let context) {
-            print(context)
-            XCTFail()
+            XCTFail(context.debugDescription)
         } catch DecodingError.keyNotFound(let key, let context) {
-            print("Key '\(key)' not found:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            XCTFail()
+            XCTFail("Key '\(key)' not found: \(context.debugDescription), codingPath: \(context.codingPath)")
         } catch DecodingError.valueNotFound(let value, let context) {
-            print("Value '\(value)' not found:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            XCTFail()
+            XCTFail("Value '\(value)' not found: \(context.debugDescription), codingPath: \(context.codingPath)")
         } catch DecodingError.typeMismatch(let type, let context) {
-            print("Type '\(type)' mismatch:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            XCTFail()
+            XCTFail("Type '\(type)' mismatch: \(context.debugDescription), codingPath: \(context.codingPath)")
         } catch {
-            print("error: ", error)
-            XCTFail()
+            XCTFail(error.localizedDescription)
         }
+        
         return nil
     }
 

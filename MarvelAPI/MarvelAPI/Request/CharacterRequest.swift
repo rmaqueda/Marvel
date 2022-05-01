@@ -44,7 +44,7 @@ public struct CharacterRequest {
     public func get(
         timeProvider: (() -> Date) = { Date() },
         id: Int
-    ) throws -> Data  {
+    ) throws -> Data {
         try characterRequest(id: id, timeProvider: timeProvider)
     }
     
@@ -67,11 +67,11 @@ public struct CharacterRequest {
         
         let timestamp = String(Int(timeProvider().timeIntervalSince1970))
         let apiKey = URLQueryItem(name: "apikey", value: publicKey)
-        let ts = URLQueryItem(name: "ts", value: timestamp)
+        let timestampQuery = URLQueryItem(name: "ts", value: timestamp)
         let hash = URLQueryItem(name: "hash", value: (timestamp + privateKey + publicKey).MD5)
         
         var components = URLComponents(url: finalURL, resolvingAgainstBaseURL: false)!
-        components.queryItems = [ts, apiKey, hash]
+        components.queryItems = [timestampQuery, apiKey, hash]
         
         if let limit = limit {
             if limit > 100 {
@@ -85,7 +85,7 @@ public struct CharacterRequest {
             components.queryItems?.append(URLQueryItem(name: "offset", value: String(offset)))
         }
         
-        session.dataTask(with: components.url!) { data, response, error in
+        session.dataTask(with: components.url!) { data, response, _ in
             if let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 resultData = data
             } else {

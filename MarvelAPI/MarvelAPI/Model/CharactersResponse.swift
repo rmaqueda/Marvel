@@ -153,7 +153,6 @@ public struct StoriesItem: Codable {
     }
 }
 
-// TODO: Complete enum with all types in API DOCs to avoid unknown scenario.
 public enum TypeEnum: String, Codable {
     case unknown
     case empty = ""

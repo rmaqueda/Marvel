@@ -66,7 +66,7 @@ class CharactersRequestTests: XCTestCase {
         
         checkRequest(expectedURL: expectedURL, exp: exp)
         
-        let _ = try? makeSUT().getAll(timeProvider: { referenceDate })
+        _ = try? makeSUT().getAll(timeProvider: { referenceDate })
         
         wait(for: [exp], timeout: 1.0)
     }
@@ -77,7 +77,7 @@ class CharactersRequestTests: XCTestCase {
         
         checkRequest(expectedURL: expectedURL, exp: exp)
         
-        let _ = try? CharacterRequest(
+        _ = try? CharacterRequest(
             session: makeStubSession(),
             publicKey: "public",
             privateKey: "private"
@@ -92,7 +92,7 @@ class CharactersRequestTests: XCTestCase {
         
         checkRequest(expectedURL: expectedURL, exp: exp)
         
-        let _ = try? makeSUT().getAll(
+        _ = try? makeSUT().getAll(
             timeProvider: { referenceDate },
             offset: 30
         )
@@ -106,7 +106,7 @@ class CharactersRequestTests: XCTestCase {
         
         checkRequest(expectedURL: expectedURL, exp: exp)
         
-        let _ = try? makeSUT().getAll(
+        _ = try? makeSUT().getAll(
             timeProvider: { referenceDate },
             limit: 30
         )
@@ -120,7 +120,7 @@ class CharactersRequestTests: XCTestCase {
         
         checkRequest(expectedURL: expectedURL, exp: exp)
         
-        let _ = try? makeSUT().get(
+        _ = try? makeSUT().get(
             timeProvider: { referenceDate },
             id: 1
         )
