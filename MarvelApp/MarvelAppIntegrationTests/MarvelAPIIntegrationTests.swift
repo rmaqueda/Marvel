@@ -59,11 +59,11 @@ class MarvelAPIIntegrationTests: XCTestCase {
         data: Data,
         file: StaticString = #filePath,
         line: UInt = #line
-    ) -> Response? {
+    ) -> CharactersResponse? {
         do {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            let response = try decoder.decode(Response.self, from: data)
+            let response = try decoder.decode(CharactersResponse.self, from: data)
             XCTAssertNotNil(response)
             return response
         } catch DecodingError.dataCorrupted(let context) {

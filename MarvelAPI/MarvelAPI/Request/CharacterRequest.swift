@@ -31,7 +31,7 @@ public struct CharacterRequest {
     
     public func getAll(
         timeProvider: (() -> Date) = { Date() },
-        limit: Int = 20,
+        limit: Int? = nil,
         offset: Int? = nil
     ) throws -> Data {
         try characterRequest(
@@ -100,7 +100,7 @@ public struct CharacterRequest {
         if let error = resultError {
             throw error
         }
-        guard let resultData = resultData else {
+        guard let resultData = resultData, !resultData.isEmpty else {
             throw Error.emptyData
         }
         

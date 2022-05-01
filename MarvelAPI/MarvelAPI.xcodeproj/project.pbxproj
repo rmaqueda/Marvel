@@ -12,7 +12,8 @@
 		113C034F281D273B002352E4 /* CharactersRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C034E281D273B002352E4 /* CharactersRequestTests.swift */; };
 		113C0352281D2747002352E4 /* String+MD5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0351281D2747002352E4 /* String+MD5Tests.swift */; };
 		113C0355281D279E002352E4 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0354281D279E002352E4 /* URLProtocolStub.swift */; };
-		113C0383281D46E9002352E4 /* ResponseCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0382281D46E9002352E4 /* ResponseCharacters.swift */; };
+		113C0383281D46E9002352E4 /* CharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0382281D46E9002352E4 /* CharactersResponse.swift */; };
+		113C038D281E52DC002352E4 /* CharactersResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C038C281E52DC002352E4 /* CharactersResponseTests.swift */; };
 		11E05169281D18F100451790 /* MarvelAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E05160281D18F100451790 /* MarvelAPI.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +33,8 @@
 		113C034E281D273B002352E4 /* CharactersRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersRequestTests.swift; sourceTree = "<group>"; };
 		113C0351281D2747002352E4 /* String+MD5Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5Tests.swift"; sourceTree = "<group>"; };
 		113C0354281D279E002352E4 /* URLProtocolStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
-		113C0382281D46E9002352E4 /* ResponseCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCharacters.swift; sourceTree = "<group>"; };
+		113C0382281D46E9002352E4 /* CharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersResponse.swift; sourceTree = "<group>"; };
+		113C038C281E52DC002352E4 /* CharactersResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersResponseTests.swift; sourceTree = "<group>"; };
 		11E05160281D18F100451790 /* MarvelAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarvelAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E05168281D18F100451790 /* MarvelAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -64,13 +66,12 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		113C0350281D273E002352E4 /* Utils */ = {
+		113C0350281D273E002352E4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				113C0354281D279E002352E4 /* URLProtocolStub.swift */,
 				113C0351281D2747002352E4 /* String+MD5Tests.swift */,
 			);
-			path = Utils;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		113C037E281D4549002352E4 /* Request */ = {
@@ -84,7 +85,31 @@
 		113C037F281D4550002352E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				113C0382281D46E9002352E4 /* ResponseCharacters.swift */,
+				113C0382281D46E9002352E4 /* CharactersResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		113C0389281E5114002352E4 /* Test Util */ = {
+			isa = PBXGroup;
+			children = (
+				113C0354281D279E002352E4 /* URLProtocolStub.swift */,
+			);
+			path = "Test Util";
+			sourceTree = "<group>";
+		};
+		113C038A281E512A002352E4 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				113C034E281D273B002352E4 /* CharactersRequestTests.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		113C038B281E52CE002352E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				113C038C281E52DC002352E4 /* CharactersResponseTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,8 +145,10 @@
 		11E0516C281D18F100451790 /* MarvelAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				113C0350281D273E002352E4 /* Utils */,
-				113C034E281D273B002352E4 /* CharactersRequestTests.swift */,
+				113C038B281E52CE002352E4 /* Model */,
+				113C0350281D273E002352E4 /* Util */,
+				113C038A281E512A002352E4 /* Request */,
+				113C0389281E5114002352E4 /* Test Util */,
 			);
 			path = MarvelAPITests;
 			sourceTree = "<group>";
@@ -237,7 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				113C0345281D26DC002352E4 /* CharacterRequest.swift in Sources */,
-				113C0383281D46E9002352E4 /* ResponseCharacters.swift in Sources */,
+				113C0383281D46E9002352E4 /* CharactersResponse.swift in Sources */,
 				113C0347281D26F1002352E4 /* String+MD5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +275,7 @@
 			files = (
 				113C034F281D273B002352E4 /* CharactersRequestTests.swift in Sources */,
 				113C0355281D279E002352E4 /* URLProtocolStub.swift in Sources */,
+				113C038D281E52DC002352E4 /* CharactersResponseTests.swift in Sources */,
 				113C0352281D2747002352E4 /* String+MD5Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
