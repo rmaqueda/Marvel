@@ -15,7 +15,7 @@ class CharactersResponseTests: XCTestCase {
         let result = try? JSONDecoder().decode([TypeEnum].self, from: data)
         XCTAssertEqual(result?[0], TypeEnum.empty)
     }
-    
+
     func test_TypeEnum_unknown() throws {
         let data = "[\"invalid\"]".data(using: .utf8)!
         let result = try? JSONDecoder().decode([TypeEnum].self, from: data)
@@ -29,5 +29,5 @@ class CharactersResponseTests: XCTestCase {
         XCTAssertEqual(result?[1], TypeEnum.unknown)
         XCTAssertEqual(result?[2], TypeEnum.cover)
     }
-    
+
 }

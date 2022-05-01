@@ -19,20 +19,20 @@ class MarvelAPIIntegrationTests: XCTestCase {
             limit: 10,
             offset: 11
         )
-        
+
         XCTAssertNotNil(data)
-        
+
         guard let data = data else {
             XCTFail("Expected data not nil")
             return
         }
-        
+
         let result = decode(data: data)
         XCTAssertEqual(result?.data.count, 10)
         XCTAssertEqual(result?.data.results.count, 10)
         XCTAssertEqual(result?.data.offset, 11)
     }
-    
+
     func test_integration_gell_1009175() {
         let data = try? CharacterRequest(
             publicKey: Secrets.marvelPublicKey,
@@ -40,19 +40,19 @@ class MarvelAPIIntegrationTests: XCTestCase {
         ).get(
             id: 1009175
         )
-        
+
         XCTAssertNotNil(data)
-        
+
         guard let data = data else {
             XCTFail("Expected data not nil")
             return
         }
-        
+
         let result = decode(data: data)
         XCTAssertEqual(result?.data.count, 1)
         XCTAssertEqual(result?.data.results[0].id, 1009175)
     }
-    
+
     // MARK: Helpers
 
     private func decode(
@@ -63,7 +63,7 @@ class MarvelAPIIntegrationTests: XCTestCase {
         do {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            
+
             return try decoder.decode(CharactersResponse.self, from: data)
         } catch DecodingError.dataCorrupted(let context) {
             XCTFail(context.debugDescription)
@@ -76,7 +76,7 @@ class MarvelAPIIntegrationTests: XCTestCase {
         } catch {
             XCTFail(error.localizedDescription)
         }
-        
+
         return nil
     }
 

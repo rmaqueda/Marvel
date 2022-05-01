@@ -12,7 +12,7 @@ public struct CharacterRequest {
     private let publicKey: String
     private let privateKey: String
     private let session: URLSession
-    
+
     public init(
         session: URLSession = URLSession.shared,
         publicKey: String,
@@ -22,13 +22,13 @@ public struct CharacterRequest {
         self.publicKey = publicKey
         self.privateKey = privateKey
     }
-    
+
     public enum Error: Swift.Error {
         case invalidLimit
         case networkError
         case emptyData
     }
-    
+
     public func getAll(
         timeProvider: (() -> Date) = { Date() },
         limit: Int? = nil,
@@ -40,14 +40,14 @@ public struct CharacterRequest {
             offset: offset
         )
     }
-    
+
     public func get(
         timeProvider: (() -> Date) = { Date() },
         id: Int
     ) throws -> Data {
         try characterRequest(id: id, timeProvider: timeProvider)
     }
-    
+
     private func characterRequest(
         id: Int? = nil,
         timeProvider: (() -> Date) = { Date() },
@@ -58,21 +58,21 @@ public struct CharacterRequest {
         if let id = id {
             finalURL.appendPathComponent(String(id))
         }
-        
+
         let group = DispatchGroup()
         group.enter()
-        
+
         var resultData: Data?
         var resultError: Error?
-        
+
         let timestamp = String(Int(timeProvider().timeIntervalSince1970))
         let apiKey = URLQueryItem(name: "apikey", value: publicKey)
         let timestampQuery = URLQueryItem(name: "ts", value: timestamp)
         let hash = URLQueryItem(name: "hash", value: (timestamp + privateKey + publicKey).MD5)
-        
+
         var components = URLComponents(url: finalURL, resolvingAgainstBaseURL: false)!
         components.queryItems = [timestampQuery, apiKey, hash]
-        
+
         if let limit = limit {
             if limit > 100 {
                 throw Error.invalidLimit
@@ -80,30 +80,30 @@ public struct CharacterRequest {
             let limitParam = URLQueryItem(name: "limit", value: String(limit))
             components.queryItems?.append(limitParam)
         }
-        
+
         if let offset = offset {
             components.queryItems?.append(URLQueryItem(name: "offset", value: String(offset)))
         }
-        
+
         session.dataTask(with: components.url!) { data, response, _ in
             if let response = response as? HTTPURLResponse, response.statusCode == 200 {
                 resultData = data
             } else {
                 resultError = Error.networkError
             }
-            
+
             group.leave()
         }.resume()
-        
+
         group.wait()
-        
+
         if let error = resultError {
             throw error
         }
         guard let resultData = resultData, !resultData.isEmpty else {
             throw Error.emptyData
         }
-        
+
         return resultData
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct Secrets {
-    
+
     private static var secrets: [String: String] = {
         var propertyListFormat = PropertyListSerialization.PropertyListFormat.xml
         let plistPath = Bundle.main.path(forResource: "Secrets", ofType: "plist")!
@@ -18,7 +18,7 @@ struct Secrets {
                                                                format: &propertyListFormat)
         return dict as! [String: String]
     }()
-    
+
     static let marvelPublicKey: String = secrets["MarvelPublicKey"]!
     static let marvelPrivateKey: String = secrets["MarvelPrivateKey"]!
 }
