@@ -8,7 +8,7 @@ public struct CharactersResponse: Codable {
     public let status: String
     public let copyright: String
     public let attributionText: String
-    public let attributionHtml: String
+    public let attributionHTML: String
     public let eTag: String
     public let data: DataClass
 
@@ -17,7 +17,7 @@ public struct CharactersResponse: Codable {
         case status
         case copyright
         case attributionText
-        case attributionHtml
+        case attributionHTML
         case eTag = "etag"
         case data
     }
@@ -44,7 +44,7 @@ public struct DataClass: Codable {
 public struct Result: Codable {
     public let id: Int
     public let name: String
-    public let resultDescription: String
+    public let description: String
     public let modified: Date
     public let thumbnail: Thumbnail
     public let resourceURI: String
@@ -57,7 +57,7 @@ public struct Result: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case resultDescription
+        case description
         case modified
         case thumbnail
         case resourceURI
