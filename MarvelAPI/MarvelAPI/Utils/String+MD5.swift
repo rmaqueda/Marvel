@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  String+MD5.swift
 //  
 //
 //  Created by Maqueda, Ricardo Javier on 29/4/22.

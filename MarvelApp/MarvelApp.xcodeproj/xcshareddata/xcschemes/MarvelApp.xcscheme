@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO"
@@ -50,7 +51,7 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
+            skipped = "YES"
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
@@ -58,6 +59,17 @@
                BuildableName = "MarvelAppIntegrationTests.xctest"
                BlueprintName = "MarvelAppIntegrationTests"
                ReferencedContainer = "container:MarvelApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "11E05167281D18F100451790"
+               BuildableName = "MarvelAPITests.xctest"
+               BlueprintName = "MarvelAPITests"
+               ReferencedContainer = "container:../MarvelAPI/MarvelAPI.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

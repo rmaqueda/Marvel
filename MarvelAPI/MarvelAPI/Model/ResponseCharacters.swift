@@ -212,7 +212,7 @@ public struct Stories: Codable {
 public struct StoriesItem: Codable {
     public let resourceUri: String
     public let name: String
-    public let type: String
+    public let type: TypeEnum
 
     enum CodingKeys: String, CodingKey {
         case resourceUri = "resourceURI"
@@ -220,20 +220,31 @@ public struct StoriesItem: Codable {
         case type = "type"
     }
 
-    public init(resourceUri: String, name: String, type: String) {
+    public init(resourceUri: String, name: String, type: TypeEnum) {
         self.resourceUri = resourceUri
         self.name = name
         self.type = type
     }
 }
 
-// TODO: Complete enum with all types
-//public enum TypeEnum: String, Codable {
-//    case cover = "cover"
-//    case interiorStory = "interiorStory"
-//    case recap = "recap"
-//    case comiclink = "comiclink"
-//}
+// TODO: Complete enum with all types in API DOCs to avoid unknown scenario.
+public enum TypeEnum: String, Codable {
+    case unknown
+    case empty = ""
+    case cover = "cover"
+    case interiorStory = "interiorStory"
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawString = try container.decode(String.self)
+        if let type = TypeEnum(rawValue: rawString) {
+            self = type
+        } else {
+            self = .unknown
+        }
+    }
+    
+}
 
 // MARK: - Thumbnail
 public struct Thumbnail: Codable {
