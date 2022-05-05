@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CharacterListVC: UIViewController {
+class CharacterListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
