@@ -11,7 +11,7 @@ public struct CharactersResponse: Codable {
     public let attributionHTML: String
     public let eTag: String
     public let data: DataClass
-
+    
     enum CodingKeys: String, CodingKey {
         case code
         case status
@@ -30,7 +30,7 @@ public struct DataClass: Codable {
     public let total: Int
     public let count: Int
     public let results: [Result]
-
+    
     enum CodingKeys: String, CodingKey {
         case offset
         case limit
@@ -53,7 +53,7 @@ public struct Result: Codable {
     public let stories: Stories
     public let events: Events
     public let urls: [URLElement]
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -75,7 +75,7 @@ public struct Comics: Codable {
     public let collectionURI: String
     public let items: [ComicsItem]
     public let returned: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case available
         case collectionURI
@@ -88,7 +88,7 @@ public struct Comics: Codable {
 public struct ComicsItem: Codable {
     public let resourceURI: String
     public let name: String
-
+    
     enum CodingKeys: String, CodingKey {
         case resourceURI
         case name
@@ -101,7 +101,7 @@ public struct Events: Codable {
     public let collectionURI: String
     public let items: [ComicsItem]
     public let returned: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case available
         case collectionURI
@@ -116,7 +116,7 @@ public struct Series: Codable {
     public let collectionURI: String
     public let items: [ComicsItem]
     public let returned: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case available
         case collectionURI
@@ -131,7 +131,7 @@ public struct Stories: Codable {
     public let collectionURI: String
     public let items: [StoriesItem]
     public let returned: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case available
         case collectionURI
@@ -145,7 +145,7 @@ public struct StoriesItem: Codable {
     public let resourceURI: String
     public let name: String
     public let type: TypeEnum
-
+    
     enum CodingKeys: String, CodingKey {
         case resourceURI
         case name
@@ -158,7 +158,7 @@ public enum TypeEnum: String, Codable {
     case empty = ""
     case cover
     case interiorStory
-
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let rawString = try container.decode(String.self)
@@ -174,7 +174,7 @@ public enum TypeEnum: String, Codable {
 public struct Thumbnail: Codable {
     public let path: String
     public let thumbnailExtension: String
-
+    
     enum CodingKeys: String, CodingKey {
         case path
         case thumbnailExtension = "extension"
@@ -185,7 +185,7 @@ public struct Thumbnail: Codable {
 public struct URLElement: Codable {
     public let type: String
     public let url: String
-
+    
     enum CodingKeys: String, CodingKey {
         case type
         case url

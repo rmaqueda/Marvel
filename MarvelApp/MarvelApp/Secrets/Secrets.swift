@@ -16,7 +16,11 @@ struct Secrets {
         let dict = try? PropertyListSerialization.propertyList(from: plistXML,
                                                                options: .mutableContainersAndLeaves,
                                                                format: &propertyListFormat)
-        return dict as! [String: String]
+        guard let dict = dict as? [String: String] else {
+            fatalError("Parse Secrets.plist fail")
+        }
+
+        return dict
     }()
 
     static let marvelPublicKey: String = secrets["MarvelPublicKey"]!
