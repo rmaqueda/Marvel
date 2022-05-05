@@ -14,6 +14,7 @@
 		113C0355281D279E002352E4 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0354281D279E002352E4 /* URLProtocolStub.swift */; };
 		113C0383281D46E9002352E4 /* CharactersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0382281D46E9002352E4 /* CharactersResponse.swift */; };
 		113C038D281E52DC002352E4 /* CharactersResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C038C281E52DC002352E4 /* CharactersResponseTests.swift */; };
+		11467D152823CE4A000C8A12 /* CharacterMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11467D142823CE4A000C8A12 /* CharacterMapper.swift */; };
 		11E05169281D18F100451790 /* MarvelAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E05160281D18F100451790 /* MarvelAPI.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		113C0354281D279E002352E4 /* URLProtocolStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		113C0382281D46E9002352E4 /* CharactersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersResponse.swift; sourceTree = "<group>"; };
 		113C038C281E52DC002352E4 /* CharactersResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersResponseTests.swift; sourceTree = "<group>"; };
+		11467D142823CE4A000C8A12 /* CharacterMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMapper.swift; sourceTree = "<group>"; };
 		11E05160281D18F100451790 /* MarvelAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarvelAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E05168281D18F100451790 /* MarvelAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				113C0344281D26DC002352E4 /* CharacterRequest.swift */,
+				11467D142823CE4A000C8A12 /* CharacterMapper.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -276,7 +279,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint  --config ../.swiftlint.yml MarvelAPI \nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint  --config ../.swiftlint.yml \nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -287,6 +290,7 @@
 			files = (
 				113C0345281D26DC002352E4 /* CharacterRequest.swift in Sources */,
 				113C0383281D46E9002352E4 /* CharactersResponse.swift in Sources */,
+				11467D152823CE4A000C8A12 /* CharacterMapper.swift in Sources */,
 				113C0347281D26F1002352E4 /* String+MD5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
