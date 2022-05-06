@@ -13,7 +13,7 @@ class CharactersRequestTests: XCTestCase {
     let baseURL = "https://gateway.marvel.com/v1/public/characters"
     let expectedHash = ("0" + "private" + "public").MD5
     lazy var commonQuery = "?ts=0&apikey=public&hash=" + expectedHash
-    let referenceDate = Date(timeIntervalSince1970: 0)
+    let referenceDateProvider = { Date(timeIntervalSince1970: 0) }
 
     override func tearDown() {
         super.tearDown()
@@ -66,7 +66,7 @@ class CharactersRequestTests: XCTestCase {
 
         checkRequest(expectedURL: expectedURL, exp: exp)
 
-        _ = try? makeSUT().getAll(timeProvider: { referenceDate })
+        _ = try? makeSUT().getAll()
 
         wait(for: [exp], timeout: 1.0)
     }
@@ -77,11 +77,7 @@ class CharactersRequestTests: XCTestCase {
 
         checkRequest(expectedURL: expectedURL, exp: exp)
 
-        _ = try? CharacterRequest(
-            session: makeStubSession(),
-            publicKey: "public",
-            privateKey: "private"
-        ).getAll(timeProvider: { referenceDate }, limit: 30)
+        _ = try? makeSUT().getAll(limit: 30)
 
         wait(for: [exp], timeout: 1.0)
     }
@@ -92,10 +88,7 @@ class CharactersRequestTests: XCTestCase {
 
         checkRequest(expectedURL: expectedURL, exp: exp)
 
-        _ = try? makeSUT().getAll(
-            timeProvider: { referenceDate },
-            offset: 30
-        )
+        _ = try? makeSUT().getAll(offset: 30)
 
         wait(for: [exp], timeout: 1.0)
     }
@@ -106,10 +99,7 @@ class CharactersRequestTests: XCTestCase {
 
         checkRequest(expectedURL: expectedURL, exp: exp)
 
-        _ = try? makeSUT().getAll(
-            timeProvider: { referenceDate },
-            limit: 30
-        )
+        _ = try? makeSUT().getAll(limit: 30)
 
         wait(for: [exp], timeout: 1.0)
     }
@@ -120,10 +110,7 @@ class CharactersRequestTests: XCTestCase {
 
         checkRequest(expectedURL: expectedURL, exp: exp)
 
-        _ = try? makeSUT().get(
-            timeProvider: { referenceDate },
-            id: 1
-        )
+        _ = try? makeSUT().get(id: 1)
 
         wait(for: [exp], timeout: 1.0)
     }
@@ -135,7 +122,8 @@ class CharactersRequestTests: XCTestCase {
         CharacterRequest(
             session: makeStubSession(),
             publicKey: "public",
-            privateKey: "private"
+            privateKey: "private",
+            timeProvider: referenceDateProvider
         )
     }
 
