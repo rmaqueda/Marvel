@@ -9,12 +9,8 @@ import UIKit
 import MarvelAPI
 
 class CharacterListViewModel {
-    private let viewController: CharacterListViewController
-    private let marvelAPI = CharacterRequest(
-        publicKey: Secrets.marvelPublicKey,
-        privateKey: Secrets.marvelPrivateKey
-    )
-    private let characterMapper = CharacterMapper()
+    private let view: CharacterListView
+    private let characterRequest: CharacterRequest
     private var page = 0
     private var isLoading = false
 
@@ -22,22 +18,31 @@ class CharacterListViewModel {
         static let requestLimit = 40
     }
 
-    init(viewController: CharacterListViewController) {
-        self.viewController = viewController
+    init(
+        view: CharacterListView,
+        session: URLSession = URLSession.shared
+    ){
+        self.view = view
+        self.characterRequest = CharacterRequest(
+            session: session,
+            publicKey: Secrets.marvelPublicKey,
+            privateKey: Secrets.marvelPrivateKey
+        )
     }
 
     func showAllCharacters(offset: Int = 0) {
+        guard !isLoading else { return }
         isLoading = true
         Task {
             do {
-                let data = try marvelAPI.getAll(limit: Constants.requestLimit, offset: offset)
-                let response = try characterMapper.map(data: data)
+                let data = try characterRequest.getAll(limit: Constants.requestLimit, offset: offset)
+                let response = try CharacterMapper().decode(data: data)
                 let viewModels = mapMarvelResponse(response)
 
                 if page == 0 {
-                    await viewController.set(viewModels)
+                    await view.set(viewModels)
                 } else {
-                    await viewController.append(viewModels)
+                    await view.append(viewModels)
                 }
                 page += 1
                 isLoading = false
@@ -48,18 +53,20 @@ class CharacterListViewModel {
     }
 
     func nextPage() {
-        guard !isLoading else { return }
         showAllCharacters(offset: page * Constants.requestLimit)
     }
 
     private func mapMarvelResponse(_ response: CharactersResponse) -> [MarvelCharacter] {
         response.data.results.compactMap {
-            guard !$0.thumbnail.path.contains("image_not_available") else { return nil }
+            guard
+                !$0.thumbnail.path.contains("image_not_available"),
+                let url = URL(string: $0.thumbnail.path + "." + $0.thumbnail.thumbnailExtension)
+            else { return nil }
 
             return MarvelCharacter(
                 id: $0.id,
                 name: $0.name,
-                imageURL: $0.thumbnail.path + "." + $0.thumbnail.thumbnailExtension
+                imageURL: url
             )
         }
     }

@@ -7,7 +7,12 @@
 
 import UIKit
 
-class CharacterListViewController: UICollectionViewController {
+@MainActor protocol CharacterListView {
+    func set(_ items: [MarvelCharacter])
+    func append(_ items: [MarvelCharacter])
+}
+
+class CharacterListViewController: UICollectionViewController, CharacterListView {
 
     // MARK: Binding Clousures
 
@@ -20,6 +25,8 @@ class CharacterListViewController: UICollectionViewController {
     private typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Int, MarvelCharacter>
 
     func set(_ items: [MarvelCharacter]) {
+        assert(Thread.isMainThread)
+
         var snapshot = DataSourceSnapshot()
         snapshot.appendSections([0])
         snapshot.appendItems(items, toSection: 0)
@@ -27,6 +34,8 @@ class CharacterListViewController: UICollectionViewController {
     }
 
     func append(_ items: [MarvelCharacter]) {
+        assert(Thread.isMainThread)
+
         var snapshot = dataSource.snapshot()
         snapshot.appendItems(items, toSection: 0)
         dataSource.apply(snapshot, animatingDifferences: true)

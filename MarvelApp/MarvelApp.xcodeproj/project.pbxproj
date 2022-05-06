@@ -161,7 +161,6 @@
 		113C0391281E5DC4002352E4 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				11F552CB2824AC70002B3CB8 /* Model */,
 				113C0392281E5DCA002352E4 /* CharacterList */,
 				113C0393281E5DD3002352E4 /* CharacterDetail */,
 				11F552C428240825002B3CB8 /* Common */,
@@ -246,6 +245,7 @@
 				11E05186281D190400451790 /* SceneDelegate.swift */,
 				11F552D32824B460002B3CB8 /* WireFrame.swift */,
 				113C0391281E5DC4002352E4 /* Module */,
+				11F552CB2824AC70002B3CB8 /* Model */,
 				113C0394281E60AD002352E4 /* Support Files */,
 				113C0332281D1EBA002352E4 /* Secrets */,
 				11467D1B2823D44C000C8A12 /* Extension */,

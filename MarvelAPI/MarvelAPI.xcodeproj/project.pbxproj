@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1101EB362824D22D00C7D387 /* JSONDecoder+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1101EB352824D22D00C7D387 /* JSONDecoder+Default.swift */; };
 		113C0345281D26DC002352E4 /* CharacterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0344281D26DC002352E4 /* CharacterRequest.swift */; };
 		113C0347281D26F1002352E4 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C0346281D26F1002352E4 /* String+MD5.swift */; };
 		113C034F281D273B002352E4 /* CharactersRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C034E281D273B002352E4 /* CharactersRequestTests.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1101EB352824D22D00C7D387 /* JSONDecoder+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Default.swift"; sourceTree = "<group>"; };
 		113C0344281D26DC002352E4 /* CharacterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterRequest.swift; sourceTree = "<group>"; };
 		113C0346281D26F1002352E4 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		113C034E281D273B002352E4 /* CharactersRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersRequestTests.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				113C0346281D26F1002352E4 /* String+MD5.swift */,
+				1101EB352824D22D00C7D387 /* JSONDecoder+Default.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				113C0345281D26DC002352E4 /* CharacterRequest.swift in Sources */,
+				1101EB362824D22D00C7D387 /* JSONDecoder+Default.swift in Sources */,
 				113C0383281D46E9002352E4 /* CharactersResponse.swift in Sources */,
 				11467D152823CE4A000C8A12 /* CharacterMapper.swift in Sources */,
 				113C0347281D26F1002352E4 /* String+MD5.swift in Sources */,

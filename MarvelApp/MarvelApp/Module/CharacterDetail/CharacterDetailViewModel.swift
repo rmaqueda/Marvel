@@ -8,10 +8,10 @@
 import Foundation
 
 struct CharacterDetailViewModel {
-    let viewController: CharacterDetailViewController
+    let view: CharacterDetailViewController
 
-    init(viewController: CharacterDetailViewController, character: MarvelCharacter) {
-        self.viewController = viewController
-        viewController.title = character.name
+    init(view: CharacterDetailViewController, character: MarvelCharacter) {
+        self.view = view
+        view.title = character.name
     }
 }

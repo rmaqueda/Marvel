@@ -10,7 +10,7 @@ import Foundation
 struct MarvelCharacter: Hashable {
     let id: Int
     let name: String
-    let imageURL: String
+    let imageURL: URL
 
     static func == (lhs: MarvelCharacter, rhs: MarvelCharacter) -> Bool {
       lhs.id == rhs.id

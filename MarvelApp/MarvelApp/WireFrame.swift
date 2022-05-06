@@ -13,7 +13,7 @@ struct WireFrame {
 
     func charactersList(layout: UICollectionViewLayout) -> UIViewController {
         let charactersViewController = CharacterListViewController(collectionViewLayout: layout)
-        let charactersViewModel = CharacterListViewModel(viewController: charactersViewController)
+        let charactersViewModel = CharacterListViewModel(view: charactersViewController)
         charactersViewController.onNextPage = charactersViewModel.nextPage
         charactersViewController.onSelect = characterDetail
         charactersViewModel.showAllCharacters()
@@ -26,7 +26,7 @@ struct WireFrame {
     func characterDetail(character: MarvelCharacter) {
         let viewController = CharacterDetailViewController()
         _ = CharacterDetailViewModel(
-            viewController: viewController,
+            view: viewController,
             character: character)
 
         navigationController.pushViewController(viewController, animated: true)

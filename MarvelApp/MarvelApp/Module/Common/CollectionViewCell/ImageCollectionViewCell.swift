@@ -10,17 +10,16 @@ import UIKit
 class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
     private var dataTask: URLSessionDataTask?
 
     override func prepareForReuse() {
-        activityIndicator.startAnimating()
         dataTask?.cancel()
         imageView.image = nil
     }
 
     func configure(with character: MarvelCharacter) {
-        downloadImage(from: URL(string: character.imageURL)!)
+        activityIndicator.startAnimating()
+        downloadImage(from: character.imageURL)
     }
 
     func downloadImage(from url: URL) {
