@@ -8,7 +8,7 @@
 import Foundation
 
 public struct CharacterRequest {
-    private var timeProvider: () -> Date
+    private let timeProvider: () -> Date
     private let charactersURL = URL(string: "https://gateway.marvel.com/v1/public/characters")!
     private let publicKey: String
     private let privateKey: String
