@@ -22,7 +22,7 @@ class CharactersResponseTests: XCTestCase {
         XCTAssertEqual(result?[0], TypeEnum.unknown)
     }
 
-    func test_TypeEnum_mix_unknown_invalid_valid() throws {
+    func test_TypeEnum_mix_unknown_invalid_and_valid() throws {
         let data = "[\"\", \"invalid\", \"cover\"]".data(using: .utf8)!
         let result = try? JSONDecoder().decode([TypeEnum].self, from: data)
         XCTAssertEqual(result?[0], TypeEnum.empty)

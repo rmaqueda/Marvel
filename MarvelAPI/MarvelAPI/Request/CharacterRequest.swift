@@ -25,8 +25,8 @@ public struct CharacterRequest {
 
     public enum Error: Swift.Error {
         case invalidLimit
-        case networkError
         case emptyData
+        case networkError
     }
 
     public func getAll(

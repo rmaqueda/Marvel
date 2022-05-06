@@ -19,27 +19,19 @@ class ImageCollectionViewCell: UICollectionViewCell {
         imageView.image = nil
     }
 
-    func configure(with character: CharacterListViewModel.Character) {
+    func configure(with character: MarvelCharacter) {
         downloadImage(from: URL(string: character.imageURL)!)
     }
 
     func downloadImage(from url: URL) {
-        getData(from: url) { data, _, error in
+        dataTask = URLSession.bigCache.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else { return }
             DispatchQueue.main.async { [weak self] in
                 self?.activityIndicator.stopAnimating()
                 self?.imageView.image = UIImage(data: data)
             }
         }
-    }
-
-    func cancelDownload() {
-        dataTask?.cancel()
-    }
-
-    private func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        dataTask = AppDelegate.session.dataTask(with: url, completionHandler: completion)
         dataTask?.resume()
     }
-
+    
 }

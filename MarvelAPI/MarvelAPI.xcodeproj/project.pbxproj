@@ -138,8 +138,8 @@
 		11E05162281D18F100451790 /* MarvelAPI */ = {
 			isa = PBXGroup;
 			children = (
-				113C037F281D4550002352E4 /* Model */,
 				113C037E281D4549002352E4 /* Request */,
+				113C037F281D4550002352E4 /* Model */,
 				113C0348281D26F4002352E4 /* Utils */,
 			);
 			path = MarvelAPI;
@@ -148,9 +148,9 @@
 		11E0516C281D18F100451790 /* MarvelAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				113C038A281E512A002352E4 /* Request */,
 				113C038B281E52CE002352E4 /* Model */,
 				113C0350281D273E002352E4 /* Util */,
-				113C038A281E512A002352E4 /* Request */,
 				113C0389281E5114002352E4 /* Test Util */,
 			);
 			path = MarvelAPITests;

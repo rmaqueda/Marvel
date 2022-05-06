@@ -21,36 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
 
-        let charactersViewController = CharacterListViewController(collectionViewLayout: layout)
-        let charactersViewModel = CharacterListViewModel(viewController: charactersViewController)
-        charactersViewController.onNextPage = charactersViewModel.loadNextPage
-        charactersViewController.onSelect = navigateToDetails
+        let layout = GroupCollectionViewLayout.layout
+//        let layout = SimpleLayout.layout
 
-        navigationController.setViewControllers([charactersViewController], animated: true)
-        window.rootViewController = navigationController
-
+        window.rootViewController = WireFrame().charactersList(layout: layout)
         window.makeKeyAndVisible()
-
-        charactersViewModel.showAllCharacters()
-    }
-
-    private var layout: UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-
-        let width = (window?.bounds.size.width ?? 0) / 2
-        layout.itemSize = CGSize(width: width, height: width)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-
-        return layout
-    }
-
-    private func navigateToDetails(_ character: CharacterListViewModel.Character) {
-        let viewController = CharacterDetailViewController()
-        let _ = CharacterDetailViewModel(
-            viewController: viewController,
-            character: character)
-        navigationController.pushViewController(viewController, animated: true)
     }
     
 }

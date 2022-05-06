@@ -25,4 +25,5 @@ struct Secrets {
 
     static let marvelPublicKey: String = secrets["MarvelPublicKey"]!
     static let marvelPrivateKey: String = secrets["MarvelPrivateKey"]!
+    
 }

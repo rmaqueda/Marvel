@@ -10,7 +10,7 @@ import Foundation
 struct CharacterDetailViewModel {
     let viewController: CharacterDetailViewController
 
-    init(viewController: CharacterDetailViewController, character: CharacterListViewModel.Character) {
+    init(viewController: CharacterDetailViewController, character: MarvelCharacter) {
         self.viewController = viewController
         viewController.title = character.name
     }
